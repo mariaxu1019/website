@@ -1,0 +1,661 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f2EBE9;
+}
+::-webkit-scrollbar-thumb {
+    background: #B99883;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #6D5A4E;
+}
+
+/* all similar content styling codes */
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.about, .services, .skills, .teams, .contact, footer{
+    font-family: 'Spectral', sans-serif;
+}
+.about .about-content,
+.services .serv-content,
+.skills .skills-content,
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Spectral', sans-serif;
+}
+section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: red;
+    transform: translateX(-50%);
+}
+section .title::after{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: #C87778;
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+/* navbar styling */
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Spectral', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background: #C87778;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.navbar.sticky .logo a span{
+    color: #fff;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: #C87778;
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+/* menu btn styling */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: #B99883;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+/* home section styling */
+.home{
+    display: flex;
+    background: #402f27;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Spectral', sans-serif;
+}
+.home .max-width{
+  width: 100%;
+  display: flex;
+}
+.home .max-width .row{
+  margin-right: 0;
+}
+
+.home .home-content{
+    position: relative;
+    bottom: -100px;
+}
+.home .home-content .text-1{
+    font-size: 30px;
+}
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-3 span{
+    color: #C87778;
+    font-weight: 500;
+}
+.home .home-content a{
+    display: inline-block;
+    background: #C87778;
+    color: #fff;
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid #C87778;
+    transition: all 0.3s ease;
+}
+.home .home-content a:hover{
+    color: #C87778;
+    background: none;
+}
+
+.home .home-content .me{
+    width: 450px;
+    clip-path: circle();
+    position: relative;
+    left: 700px;
+    bottom: 350px;
+}
+/* about section styling */
+.about{
+    background-color: #f1f1f1;
+}
+.about-content .left{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+
+.about .about-content .left{
+    width: 45%;
+    position: relative;
+    text-align: center;
+    color: #7D2D3A;
+}
+
+.myinfo{
+    position: absolute;
+    bottom: 15px;
+    left: -80px;
+    font-size: 50px;
+    font-style: italic;
+    line-height: 1;
+}
+.about .about-content .left img{
+    height: 500px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.about .about-content .right{
+    width: 55%;
+}
+.about .about-content .right .text{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.about .about-content .right .text span{
+    color: #7D2D3A;
+}
+.about .about-content .right p{
+    text-align: justify;
+}
+.about .about-content .right a{
+    display: inline-block;
+    background: #7D2D3A;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid #7D2D3A;
+    transition: all 0.3s ease;
+}
+.about .about-content .right a:hover{
+    color: #7D2D3A;
+    background: none;
+}
+
+/* projects section styling */
+
+.teams, .contact{
+    color:#fff;
+    background: #402f27;
+}
+
+.title2{
+    font-size: 50px;
+    font-style: italic;
+    font-weight: 400;
+    text-align: center;
+    position: relative;
+    bottom: 40px;
+}
+.teams .carousel .card{
+    width: auto;
+    background: #69584F;
+    text-align: center;
+    border-radius: 6px;
+    padding: 40px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.teams .carousel .card:hover{
+    background: #C87778;
+}
+
+.teams .carousel .card i{
+    font-size: 30px;
+    color: #C87778;
+    transition: color 0.3s ease;
+}
+.teams .carousel .card:hover i{
+    color: #fff;
+}
+.teams .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.teams .carousel .card:hover .box{
+    transform: scale(1.03);
+}
+.teams .carousel .card .text{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+.teams .carousel .paragraph{
+    font-size: 15px;
+    font-weight: 300;
+    text-align: left;
+    margin: 10px 0 7px 0;
+}
+
+.teams .carousel .link{
+    font-size: 15px;
+    font-weight: 300;
+    text-align: left;
+    margin: 10px 0 7px 0;
+    color: white;
+    text-decoration-line: underline;
+}
+
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid #C87778!important;
+    transition: all 0.3s ease;
+}
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover{
+    background: #C87778!important;
+}
+
+/* skills section styling */
+.skills .title3{
+    font-size: 50px;
+    font-style: italic;
+    font-weight: 400;
+    text-align: left;
+    position: relative;
+    bottom: 40px;
+}
+
+.skills .skills-content .column{
+    width: calc(50% - 30px);
+}
+.skills .skills-content .left .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.skills .skills-content .left p{
+    text-align: justify;
+}
+
+.skills .skills-content .right .bars{
+    margin-bottom: 15px;
+}
+.skills .skills-content .right .info{
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.skills .skills-content .right span{
+    font-weight: 500;
+    font-size: 18px;
+}
+.skills .skills-content .right .line{
+    height: 5px;
+    width: 100%;
+    background: lightgrey;
+    position: relative;
+}
+.skills .skills-content .right .line::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #7D2D3A;
+}
+.skills-content .right .html::before{
+    width: 90%;
+}
+.skills-content .right .css::before{
+    width: 60%;
+}
+.skills-content .right .js::before{
+    width: 80%;
+}
+.skills-content .right .php::before{
+    width: 50%;
+}
+.skills-content .right .mysql::before{
+    width: 70%;
+}
+
+/* contact section styling */
+.contact .title4{
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 400;
+    text-align: center;
+    position: relative;
+    bottom: 40px;
+}
+.contact .contact-content{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    margin-left: 10%;
+}
+
+.contact .contact-content .row{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.contact .contact-content .row i{
+    font-size: 25px;
+    color: #BBA290;
+    align-items: center;
+    position: relative;
+    top: 9px;
+    left: 7px;
+}
+
+.contact .contact-content .info .socials{
+    font-weight: 300;
+    font-size: 18px;
+    color: white;
+    text-align: left;
+    position: relative;
+    bottom: 21px;
+    left: 15%;
+}
+
+
+/* responsive media query start */
+@media (max-width: 1104px) {
+    .home .home-content {
+        position: relative;
+        bottom: 20px;
+    }
+
+    .myinfo{
+        position: absolute;
+        bottom: 20px;
+        left: 70px;
+        font-size: 45px;
+        font-style: italic;
+        line-height: 1;
+    }
+}
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+    .myinfo{
+        position: absolute;
+        bottom: 15px;
+        left: 93px;
+        font-size: 45px;
+        font-style: italic;
+        line-height: 1;
+    }
+}
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .myinfo{
+        display: none;
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .about .about-content .column{
+        width: 100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .services .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .skills .skills-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+        flex-direction: column;
+    }
+
+    .contact .contact-content .row .i{
+        display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-content: left;
+      margin-top: 20px;
+    }
+
+    .contact .contact-content .row .socials{
+        display: none;
+    }
+
+    .home .home-content .me{
+        display: none;
+    }
+}
+@media (max-width: 690px) {
+    .myinfo{
+        display: none;
+    }
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .me{
+        display: none;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+    .services .serv-content .card{
+        width: 100%;
+    }
+
+    .contact .contact-content .row .i{
+        display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-content: left;
+      margin-top: 20px;
+    }
+
+    .contact .contact-content .row .socials{
+        display: none;
+    }
+}
+@media (max-width: 500px) {
+    .myinfo{
+        display: none;
+    }
+    .home .home-content .me{
+        display: none;
+    }
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 27px;
+    }
+    .about .about-content .right .text,
+    .skills .skills-content .left .text{
+        font-size: 19px;
+    }
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+    .contact .contact-content .row .i{
+        display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-content: left;
+      margin-top: 20px;
+    }
+    .contact .contact-content .row .socials{
+        display: none;
+    }
+}
+
